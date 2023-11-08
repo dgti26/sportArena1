@@ -1,0 +1,7 @@
+{
+  "name": "sportArena",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
