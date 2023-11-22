@@ -1,0 +1,10 @@
+#externa {
+    position: relative;
+    width: 100%;
+}
+
+#interna {
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+}

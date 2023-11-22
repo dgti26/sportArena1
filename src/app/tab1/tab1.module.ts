@@ -7,6 +7,7 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 import { register } from 'swiper/element/bundle';
 register();
 import { Tab1PageRoutingModule } from './tab1-routing.module';
+import { CarouselComponent } from '../Components/carousel/carousel.component';
 
 @NgModule({
   imports: [
@@ -16,7 +17,7 @@ import { Tab1PageRoutingModule } from './tab1-routing.module';
     ExploreContainerComponentModule,
     Tab1PageRoutingModule
   ],
-  declarations: [Tab1Page], 
+  declarations: [Tab1Page, CarouselComponent], 
   schemas:[CUSTOM_ELEMENTS_SCHEMA],
 })
 export class Tab1PageModule {}
