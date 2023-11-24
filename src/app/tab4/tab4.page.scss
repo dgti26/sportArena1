@@ -1,7 +1,12 @@
-ion-content{
-
-
-
+ion-content {
     --background: url(../../assets/tab4.jfif) no-repeat center/cover fixed;
-    }
-
+}
+.conteudo{
+    width: 100%;
+    align-items: center;
+    align-content: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 100px;
+}
