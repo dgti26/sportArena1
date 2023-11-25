@@ -1,7 +1,19 @@
-ion-fab{
+ion-fab {
     top: 50px;
     right: 50px;
 }
-ion-searchbar{
+
+ion-searchbar {
     top: 0px;
+}
+
+.qtd {
+    position: absolute;
+    top: 1px;
+    left: 40px;
+    padding: 7px;
+    border-radius:20px;
+    font-size: 10px;
+    width: 25px;
+    height: 25px;
 }

@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
+  qtd:any=0
   constructor() {}
+  ngOnChangeView(){
+    this.qtd=sessionStorage.getItem('qtd');
+  }
 }
