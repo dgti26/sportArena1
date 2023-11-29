@@ -1,6 +1,24 @@
-ion-content{
+ion-content {
 
 
 
     --background: url(../../assets/tab3.jfif) no-repeat center/cover fixed;
-    }
+}
+
+ion-item {
+    --padding-start: 0;
+}
+
+.tamanho{
+    margin: 25px;
+    font-weight: 600;
+    font-size: 13px;
+    color: blue;
+
+}
+.valor{
+    font-size: 16px;
+    font-weight: 700;
+    color: red;
+
+}
