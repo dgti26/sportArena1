@@ -51,7 +51,7 @@
             </ion-item> -->
 
 
-          <!-- </ion-list>
+      <!-- </ion-list>
         </ion-card-content>
       </ion-card> -->
 
@@ -62,13 +62,14 @@
         </ion-card-header>
         <ion-card-content>
           <ion-list>
-            <ion-item *ngFor="let p of produtos" (click)="addCarrinho()">
-              <ion-thumbnail slot="start">
-                <img alt={{p.produto}} src={{p.imagem}} />
-              </ion-thumbnail>
-              <ion-label>{{p.produto}}</ion-label>
-              <p class="tamanho">{{p.tamanho}}</p>
-              <p class="valor">R${{p.valor}}</p>
+            <ion-item *ngFor="let p of produtos" (click)="setOpen(true, p.produto, p.tamanho, p.valor, p.imagem, p.qtd, p.descricao)">
+                <ion-thumbnail slot="start">
+                  <img alt={{p.produto}} src={{p.imagem}} />
+                </ion-thumbnail>
+                <ion-label>{{p.produto}}</ion-label>
+                <p class="tamanho">{{p.tamanho}}</p>
+                <p class="valor">R${{p.valor}}</p>
+              
             </ion-item>
 
           </ion-list>
@@ -82,3 +83,37 @@
 
 
   </ion-content>
+  <ion-modal [isOpen]="isModalOpen">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Modal</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="setOpen(false, '', '', '', '', '','')">Close</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <div class="modalFundo">
+        <img src={{produto[0].pImg}}>
+        <h1>{{produto[0].pNome}}</h1>
+        <div class="counter__section">
+          <p>Quantidade:</p>
+          <ion-button (click)="decrement()" class="bt">-</ion-button>
+          <p>{{count}}</p>
+          <ion-button (click)="increment()" class="bt">+</ion-button>
+        </div>
+        <div>
+        <p class="valor">
+         Valor Unitário: R$ {{produto[0].pValor}}
+        </p>
+        <p class="valor">
+         Valor Total: R$ {{valorTotal}}
+        </p>
+        <ion-button expand="block" (click)="addCarrinho()">Adicionar ao carrinho</ion-button>
+      </div>
+        <ion-button (click)="addCarrinho()">Adicionar ao carrinho</ion-button>
+      </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
