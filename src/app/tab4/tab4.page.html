@@ -9,6 +9,42 @@
     
   </ion-header>
   <div class="conteudo">
-    <app-login></app-login>
+    
   </div>
+  
+  <div *ngIf="alternaCards">
+    
+    
+    <form method="POST" class="formLogin">
+      <h1>Login</h1>
+      <p>Digite os seus dados de acesso no campo abaixo.</p>
+      <label for="email">E-mail</label>
+      <input type="email" placeholder="Digite seu e-mail" autofocus="true" />
+      <label for="password">Senha</label>
+      <input type="password" placeholder="Digite sua senha" />
+      <p>Nâo possui cadastro? <a href="/">Cadastre-se</a></p>
+      <p><a (click)='alternaCards=!alternaCards'>Esqueci minha senha</a></p>
+      <input type="submit" value="Acessar" class="btn" />
+      <app-login btLogin="oogle" icone="logo-google"/>
+      <app-login btLogin="acebook" icone="logo-facebook"/>
+      </form>
+
+
+  </div>
+
+  <ion-card *ngIf="!alternaCards">
+    <ion-card-header>
+      <ion-card-title>Card Title</ion-card-title>
+      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Here's a small text description for the card content. Nothing more, nothing less.
+      <ion-button>Enviar</ion-button> <ion-button (click)="alternaCards=!alternaCards">Voltar</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+
+
+
 </ion-content>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { GoogleAuthProvider, signInWithPopup, Auth} from '@angular/fire/auth';
 @Component({
   selector: 'app-login',
@@ -9,7 +9,13 @@ export class LoginComponent implements OnInit {
   userPhoto=''
   userName=''
   photo=false
-
+  @Input() btLogin?:string
+  @Input() icone?:string
+  selectFunction(){
+    if(this.btLogin=='oogle'){
+      this.LoginComGoogle()
+    }
+  }
   LoginComGoogle() {
     const provider = new GoogleAuthProvider()
     signInWithPopup(this.auth, provider).then((res: any) => {
